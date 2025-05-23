@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gereja Kristen Protestan Indonesia (GKPI) - Komunitas orang percaya yang beribadah, bersekutu, dan melayani berdasarkan pengakuan iman reformasi">
+    <title>GKPI | Gereja Kristen Protestan Indonesia</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    
+    <style>
+        /* ============ VARIABLES ============ */
+        :root {
+            --primary: #2E5EAA;     /* Biru GKPI */
+            --primary-dark: #1A3A6A;
+            --secondary: #E74C3C;   /* Merah aksen */
+            --light: #F8F9FA;
+            --dark: #2C3E50;
+            --gray: #95A5A6;
+            --font-title: 'Noto Serif', serif;
+            --font-body: 'Open Sans', sans-serif;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* ============ BASE STYLES ============ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-title);
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            background-color: var(--primary);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text h1 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.8rem;
+        }
+
+        /* ============ NAVIGATION ============ */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .hamburger {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(46, 94, 170, 0.85), rgba(46, 94, 170, 0.85)), 
+                        url('assets/img/gkpi-hero.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .verse {
+            font-style: italic;
+            margin: 30px auto;
+            padding: 20px;
+            border-left: 3px solid var(--secondary);
+            background-color: rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+
+        /* ============ ABOUT SECTION ============ */
+.about {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-img {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-img:hover {
+    transform: translateY(-5px);
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-content {
+    background-color: var(--light);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.history-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.history-text p {
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.mv-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-top: 4px solid var(--primary);
+}
+
+.mv-card h4 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mv-card i {
+    color: var(--secondary);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 0 15px;
+    }
+    
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+}
+
+        /* ============ BELIEFS SECTION ============ */
+        .beliefs {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .beliefs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .belief-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .belief-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .belief-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* ============ MINISTRIES SECTION ============ */
+        .ministries {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .ministry-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: var(--light);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .map {
+            height: 400px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        /* ============ CONTACT & MAP SECTION ============ */
+.contact-map {
+    padding: 80px 0;
+    background-color: var(--light);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.contact-info {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info i {
+    color: var(--primary);
+    width: 20px;
+    margin-right: 10px;
+}
+
+.map {
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        order: -1;
+    }
+}
+
+        /* ============ FOOTER ============ */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-link {
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ============ RESPONSIVE STYLES ============ */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img {
+                order: -1;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo gkpi.png" alt="Logo GKPI" class="logo-img">
+                <div class="logo-text">
+                    <h1>Gereja Kristen Protestan Indonesia</h1>
+                    <p>Berakar pada Firman, Berbuah dalam Pelayanan</p>
+                </div>
+            </div>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang GKPI</a></li>
+                    <li><a href="#beliefs">Pengakuan Iman</a></li>
+                    <li><a href="#ministries">Pelayanan</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Syalom, Selamat Datang di Kantor Sinode GKPI</h1>
+            <p>Komunitas orang percaya yang beribadah, bersekutu, dan melayani berdasarkan pengakuan iman reformasi</p>
+            
+            <div class="verse">
+                "Sebab itu, saudara-saudaraku, berdirilah teguh, berpeganglah pada ajaran-ajaran yang kamu terima dari kami, baik secara lisan, maupun secara tertulis." <br>
+                (2 Tesalonika 2:15)
+            </div>
+            
+            <a href="#about" class="btn">Pelajari Lebih Lanjut</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang GKPI</h2>
+            
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="sejarah gkpi.webp" alt="Sejarah GKPI">
+                </div>
+                
+                <div class="about-content">
+                    <h3>Sejarah Singkat</h3>
+                    <div class="history-text">
+                    <p>Gereja di segala abad dan tempat menghadapi berbagai tantangan dan pertanyaan, baik yang bersifat klasik maupun yang baru sejalan dengan perkembangan zaman dan konteksnya. Terhadap semua itu gereja harus memberi jawab, jawaban itu harus bersumber dari dan didasarkan pada Firman Tuhan di dalam Alkitab sebagai satu-satunya sumber ajaran dan norma yang benar.
+
+                        Demikian juga Gereja Kristen Protestan Indonesia (GKPI). GKPI adalah bagian dari Tubuh Kristus yang esa, kudus, am dan rasuli di muka bumi ini. GKPI adalah juga suatu persekutuan yang secara khas hadir di negara Republik Indonesia ini. Sejak berdirinya tanggal 30 Agustus 1964. GKPI ditantang untuk memberi jawab atas berbagai pertanyaan dan masalah yang menyangkut banyak hal mendasar yang diimaninya, dalam rangka menyatakan ketaatan dan kesetiaannya kepada Tuhan Yesus Kristus,  Raja Gereja dan Juruselamat dunia.
+                        
+                        Ada berbagai  jawaban yang telah dikemukakan dan dirumuskan GKPI di sepanjang sejarah dan perjalanannya. Jawaban dan pernyataan iman itu tersebar di berbagai dokumen, berupa keputusan-keputusan dan pesan-pesan Sinode Am dan Rapat Pendeta, maupun berbagai hasil pertemuan dan persidangan di semua aras (tingkatan), dari tingkat Jemaat hingga Pusat. Karena sifat dan bentuknya tersebar dan tidak tersusun padu, GKPI perlu menyusun dan memiliki  rumusan yang lebih lengkap dan terpadu, agar dapat dipedomani dan digunakan seluruh warga dan pelayan GKPI tatkala menghadapi berbagai pertanyaan dan masalah yang menyangkut iman mereka.
+                        
+                        Dengan demikian Pokok Pokok Pemahaman Iman GKPI ini berfungsi sebagai:
+                        
+                        Pedoman dan tuntunan bagi seluruh jajaran GKPI dalam hal ajaran, supaya tidak ?diombang ambingkan oleh rupa rupa angin pengajaran? (ef 4:14) dan supaya dapat menjawab perkara-perkara mendasar yang berkaitan dengan imannya, sebagaimana terlihat dari susunan isi dokumen ini;
+                        Pedoman  dan acuan bagi warga dan pelayan GKPI dalam merumuskan bentuk, isi, dan tujuan kesaksian dan pelayanan, demikian juga dalam menyusun peraturan dan program GKPI disemua aras
+                        Pedoman dan acuan untuk memberi jawab dan pertanggungjawaban tentang imannya terhadap berbagai pengajaran dan nilai yang terus menerus bermunculan dan berubah, sekaligus menolaknya kalau ternyata bertentangan dengan iman kristiani.
+                        Pokok pokok Pemahaman Iman GKPI ini bersumber dan berdasar pada Alkitab. Karena itu tidak dimaksudkan sebagai pengganti ataupun tandingan Alkitab. Namun di lain pihak dokumen ini hendak juga mencerminkan pemahaman dan penafsiran atas amanat Alkitab secara aktual, sehingga Alkitab sungguh-sungguh bersuara secara relevan pada masa kini, dan pesannya menjadi jelas bagi para warga dan pelayan GKPI.
+                        Pokok pokok Pemahaman Iman GKPI ini juga mengacu pada sejumlah dokumen iman gereja dari segala abad, terutama yang dipelihara dalam tradisi iman gereja reformatoris, antara lain Pengakuan Iman Rasuli, Pengakuan Iman Nicea-Konstantinopel, Pengakuan Iman Athanasianum, Katekhismus Martin Luther dan Konfessi Augsburg, demikian juga Pokok pokok ajaran bapa bapa gereja yang diakui sebagai bersifat ekumenis dan reformatoris. Dan sebagai bagian dari gereja Kristen yang mengesa di Indonesia, Pokok pokok Pemahaman iman ini juga mengacu kepada Pemahaman Bersama Iman Kristen di Indonesia (PBIK), salah satu dari Lima Dokumen Keesaan Gereja (LDKG) yang dirumuskan bersama di dalam Persekutuan Gereja di Indonesia (PGI).
+                        
+                        Seperti juga dinyatakan dalam Tata Gereja GKPI, dengan pokok Pokok Pemahaman Iman ini GKPI juga sekaligus hendak menegaskan jatidirinya sebagai gereja yang hadir di tengah pergumulan bangsanya, dan turut memberi sumbangan bagi peletakan landasan moral, etik dan spritual bagi kehidupan bangsa Indonesia yang sedang membangun demi perwujudan cita-citanya.</p>
+                    
+                    <h3>Visi, Misi, dan Motto Pelayanan</h3>
+                    <p><strong>Visi:</strong> Menjadi gereja yang setia kepada Kristus, bertumbuh dalam iman, dan berdampak bagi masyarakat.</p>
+                    <p><strong>Misi:</strong> 
+                        1. Memberitakan Injil Yesus Kristus <br>
+                        2. Membangun persekutuan orang percaya <br>
+                        3. Melayani masyarakat dalam kasih</p>
+                    <p> <strong>Motto Pelayanan:</strong>
+                        1. Yesus Gembala Yang baik
+                        2. Melayani Bukan Untuk dilayani
+                        3. Imamat Am Orang percaya
+                        4. Membayar Hutang Penginjilan</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beliefs Section -->
+    <section class="beliefs" id="beliefs">
+        <div class="container">
+            <h2 class="section-title">Pengakuan Iman GKPI</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 40px;">Dasar-dasar iman yang kami percayai sesuai pengajaran Alkitab</p>
+            
+            <div class="beliefs-grid">
+                <div class="belief-card">
+                    <div class="belief-icon">
+                        <i class="fas fa-bible"></i>
+                    </div>
+                    <h3>Alkitab</h3>
+                    <p>Kami percaya Alkitab adalah Firman Allah yang diilhamkan, tanpa salah dalam naskah aslinya, dan menjadi otoritas tertinggi bagi iman dan kehidupan.</p>
+                </div>
+                
+                <div class="belief-card">
+                    <div class="belief-icon">
+                        <i class="fas fa-cross"></i>
+                    </div>
+                    <h3>Allah Tritunggal</h3>
+                    <p>Kami percaya pada satu Allah yang kekal dalam tiga pribadi: Bapa, Anak (Yesus Kristus), dan Roh Kudus.</p>
+                </div>
+                
+                <div class="belief-card">
+                    <div class="belief-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3>Gereja</h3>
+                    <p>Kami percaya gereja adalah tubuh Kristus yang terdiri dari semua orang percaya sepanjang zaman.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministries Section -->
+    <section class="ministries" id="ministries">
+        <div class="container">
+            <h2 class="section-title">Bidang Pelayanan</h2>
+            
+            <div class="ministry-tabs">
+                <button class="tab-btn active" data-tab="worship">Ibadah</button>
+                <button class="tab-btn" data-tab="education">Pendidikan</button>
+                <button class="tab-btn" data-tab="diakonia">Diakonia/Pelayanan</button>
+            </div>
+            
+            <div class="tab-content active" id="worship">
+                <h3>Ibadah & Pembinaan</h3>
+                <p>GKPI menyelenggarakan berbagai bentuk ibadah untuk membangun iman jemaat:</p>
+                <ul style="margin-top: 15px; margin-left: 20px;">
+                    <li>Ibadah Minggu (2 bahasa: Indonesia dan Batak)</li>
+                    <li>Jadwal Ibadah : Pagi, Siang, Sore, dan Malam</li>
+                    <li>Persekutuan Doa Mingguan</li>
+                    <li>Pembinaan Warga Gereja (Pemuda/i, Ama, Ina, dan Lansia)</li>
+                    <li>Sekolah Minggu untuk anak-anak</li>
+                </ul>
+            </div>
+            
+            <div class="tab-content" id="education">
+                <h3>Pendidikan & Katekisasi</h3>
+                <p>Program pendidikan untuk memperdalam iman:</p>
+                <ul style="margin-top: 15px; margin-left: 20px;">
+                    <li>Katekisasi (Pendidikan Dasar Iman Kristen)</li>
+                    <li>Pembinaan Pemuda-Pemudi Remaja</li>
+                    <li>Sekolah Teologi GKPI</li>
+                    <li>Seminar-seminar teologi</li>
+                </ul>
+            </div>
+            
+            <div class="tab-content" id="diakonia">
+                <h3>Pelayanan Sosial</h3>
+                <p>Pelayanan kasih kepada masyarakat:</p>
+                <ul style="margin-top: 15px; margin-left: 20px;">
+                    <li>Rumah Sakit GKPI</li>
+                    <li>Panti Asuhan MAMRE GKPI</li>
+                    <li>Bantuan Bencana Alam</li>
+                    <li>Program Pemberdayaan Masyarakat</li>
+                    <li>Rumah Lansia Sejahtera (LANTERA) GKPI</li>
+                    <li>Yayasan Pendidikan Tunanetra Sumatera (YAPENTRA) GKPI</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+<section class="contact-map" id="contact">
+    <div class="container">
+        <h2 class="section-title">Lokasi Kami</h2>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Kantor Sinode GKPI</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Kapt Sitorus No. 13, Pematang Siantar, Sumatera Utara</p>
+                <p><i class="fas fa-phone"></i> (0622) 22664</p>
+                <p><i class="fas fa-envelope"></i> info@gkpi.kantorsinode</p>
+                
+                <h3 style="margin-top: 20px;">Jam Pelayanan</h3>
+                <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
+                <p>Sabtu: 08.00 - 12.00 WIB</p>
+            </div>
+            
+            <div class="map-container">
+                <!-- Ganti koordinat dengan lokasi tepat GKPI Pematang Siantar -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.5271738574534!2d99.05796807359636!3d2.9511002970251248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30318459cc204e2d%3A0xb7ee5657473030f!2sKantor%20Sinode%20GKPI!5e0!3m2!1sen!2sid!4v1747813897091!5m2!1sen!2sid"
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    class="map">
+                </https:>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo gkpi.png" alt="Logo GKPI" class="footer-logo-img">
+                        <h3>GKPI</h3>
+                    </div>
+                    <p>Gereja Kristen Protestan Indonesia adalah gereja reformasi yang berkomitmen pada pengajaran Alkitab dan pelayanan di Indonesia.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Kontak</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Kapt Sitorus No. 13 Pematang Siantar, Sumatera Utara </li>
+                        <li><i class="fas fa-phone"></i> (0622) 22664</li>
+                        <li><i class="fas fa-envelope"></i> info@gkpi.kantorsinode</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#beliefs">Pengakuan Iman</a></li>
+                        <li><a href="#ministries">Pelayanan</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Gereja Kristen Protestan Indonesia. Seluruh hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            hamburger.innerHTML = navMenu.classList.contains('show') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Tab System
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
